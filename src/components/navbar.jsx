@@ -15,9 +15,9 @@ function NavBar({ setAnimationChain, useAnimation, inView }) {
     <div className="nav-container">
       {!isMobile && (
         <animated.div className="nav-bar" style={navStyle}>
-          <a to="home" className="logo">
+          {/* <a to="home" className="logo">
             Logo
-          </a>
+          </a> */}
           <a className={inView.home ? "active" : ""} href="#home">
             Home
           </a>

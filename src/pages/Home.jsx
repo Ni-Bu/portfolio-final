@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 import foreground1 from "../img/foreground1.png";
 import hello from "../img/Hello.png";
-import resume from "../img/icons8-resume-500.png";
-import github from "../img/icons8-github.png";
+import resume from "../img/icons8-resume-500.svg";
+import github from "../img/icons8-github.svg";
 import { animated } from "react-spring";
 import { useInViewEffect } from "react-hook-inview";
 
@@ -44,21 +44,22 @@ function Home({ setAnimationChain, useAnimation, setInView }) {
       <div className="intro-left-container">
         <div className="intro-text-container">
           <animated.div className="intro-text" style={introTextStyle}>
-            Hello, my name is Muneeb. <br />I am a frontend developer.
+            Hello, my name is Muneeb. I am a frontend developer.
           </animated.div>
         </div>
         <div className="intro-links">
           <animated.img
             src={resume}
-            className="inner1"
+            className="links "
             style={introLinkStyle}
             alt="resume icon"
           />
           <animated.img
             src={github}
-            className="inner2"
+            className="links "
             style={introLinkStyle}
             alt="github icon"
+            onClick={() => window.open("https://github.com/Ni-Bu", "_blank")}
           />
         </div>
       </div>

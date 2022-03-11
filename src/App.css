@@ -50,6 +50,45 @@ body {
 body::-webkit-scrollbar {
   width: 0 !important;
 }
+.nav-container {
+  position: fixed;
+
+  width: 100%;
+
+  z-index: 10000;
+  padding: 1rem;
+}
+
+.nav-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  color: var(--text);
+}
+.nav-bar .logo {
+  flex-basis: 60%;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+.nav-bar a {
+  opacity: 40%;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+.nav-bar a:hover {
+  transform: scale(1.1);
+}
+.nav-bar .active {
+  opacity: 100%;
+  border-bottom: 2px solid #fa58b6;
+}
+
 .home {
   height: var(--page-size);
   display: flex;
@@ -71,14 +110,17 @@ body::-webkit-scrollbar {
 
   gap: 6vw;
 }
-.intro-left-container .inner1 {
-  width: clamp(76px, 8%, 150px);
+.intro-left-container .links {
+  width: clamp(66px, 8%, 150px);
+  opacity: 70%;
 }
-.intro-left-container .inner2 {
-  width: clamp(76px, 8%, 150px);
+.links:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
+
 .intro-text-container {
-  width: 100%;
+  /* width: 80%; */
   font-size: var(--large-font-size);
   overflow-wrap: break-word;
   display: flex;
@@ -94,6 +136,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 10vw;
 }
 .intro-right-container .child {
   position: absolute;
@@ -108,44 +151,6 @@ body::-webkit-scrollbar {
 
 .intro-right-container .child-2 {
   width: clamp(453px, 30vw, 700px);
-}
-
-.nav-arrow {
-  height: 10vh;
-}
-.nav-container {
-  position: fixed;
-
-  width: 100%;
-
-  z-index: 10000;
-  padding: 1rem;
-}
-
-.nav-bar {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  color: var(--text);
-}
-.nav-bar .logo {
-  flex-basis: 60%;
-}
-
-a,
-a:hover,
-a:focus,
-a:active {
-  text-decoration: none;
-  color: inherit;
-}
-.nav-bar a {
-  opacity: 40%;
-  text-decoration: none;
-}
-.nav-bar .active {
-  opacity: 100%;
-  border-bottom: 2px solid #fa58b6;
 }
 
 .project {
@@ -241,7 +246,7 @@ a:active {
   width: 50%;
 }
 .front:hover {
-  font-size: var(--large-font-size);
+  transform: scale(1.05);
 }
 .contact {
   height: var(--page-size);

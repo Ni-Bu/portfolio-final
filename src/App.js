@@ -54,6 +54,7 @@ const useAnimation = (ref, mTop, mRight, mBottom, mLeft) => {
       marginLeft: 0,
     },
     ref: ref,
+    config: { duration: 800 },
   });
   return spring;
 };

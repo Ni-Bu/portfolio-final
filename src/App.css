@@ -57,12 +57,10 @@ body::-webkit-scrollbar {
 }
 .home {
   height: var(--page-size);
-  /* padding-top: 10vh; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  /* margin: auto; */
   padding: 1rem;
 }
 
@@ -70,32 +68,26 @@ body::-webkit-scrollbar {
   display: flex;
   flex-flow: column nowrap;
   flex-basis: 70%;
-  /* justify-content: center; */
-  /* margin: auto 0; */
-  /* margin-top: 15vw; */
+
   gap: 3vw;
 }
 .intro-links {
-  /* border: 1px solid red; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  /* padding-left: 5rem; */
+
   gap: 6vw;
 }
 .intro-left-container .inner1 {
   width: clamp(96px, 8%, 150px);
-  /* padding: 2rem; */
 }
 .intro-left-container .inner2 {
   width: clamp(96px, 8%, 150px);
-  /* padding: 2rem; */
 }
 .intro-text-container {
   width: 100%;
   font-size: var(--large-font-size);
   overflow-wrap: break-word;
-
   display: flex;
   justify-content: center;
 }
@@ -108,35 +100,22 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .intro-right-container .child {
   position: absolute;
-
-  /* top: 5vw; */
 }
-/* .herb-bg-img {
-  position: absolute;
-  left: 50%;
-  margin-left: -600px; // Change as needed
-  margin-top: 5%;
-  z-index: -2;
-} */
-.intro-right-container .child-1 {
-  /* left: 0; */
 
+.intro-right-container .child-1 {
   width: clamp(345px, 70%, 600px);
-  /* bottom: clamp(130px, 130px+20vw, 800px); */
   position: relative;
   top: 24%;
   z-index: -10000;
 }
 
 .intro-right-container .child-2 {
-  /* left: 150px; */
   width: clamp(453px, 30vw, 700px);
 }
 
@@ -177,12 +156,9 @@ a:active {
   border-bottom: 2px solid #fa58b6;
 }
 .project {
-  /* padding-top: 10vh; */
   height: var(--page-size);
-
   display: flex;
   flex-flow: row nowrap;
-  /* justify-content: space-between; */
 }
 .project .image-container {
   position: relative;
@@ -192,27 +168,21 @@ a:active {
 }
 .project .inner1 {
   position: absolute;
-
   width: clamp(398px, 25vw, 700px);
-  /* height: 50%; */
   z-index: -90;
 }
 .project .inner2 {
   position: absolute;
-  /* height: 120%; */
   width: clamp(481px, 25vw, 700px);
   z-index: -100;
 }
 .project .content-container {
   padding: 2rem;
   flex-basis: 70%;
-  /* width: 100%; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  /* align-items: center; */
-  /* padding-top: 20vh; */
   gap: 10vw;
 }
 
@@ -220,71 +190,48 @@ a:active {
   transition: transform 1s;
   transform-style: preserve-3d;
 }
-.task-card:hover .content {
+.task-card.flipped > .content {
   transform: rotateY(180deg);
   transition: transform 0.5s;
-  cursor: pointer;
 }
 .front,
 .back {
   position: absolute;
-
   background-position: center;
   background-size: cover;
-  width: clamp(134px, 20.85vw, 400px);
-
-  height: clamp(284px, 27.8vw, 600px);
-  background: #03446a;
-  color: white;
+  width: clamp(175px, 20.85vw, 400px);
+  height: clamp(350px, 27.8vw, 600px);
+  background: var(--foreground1);
+  color: var(--highlighted-text);
   vertical-align: middle;
   text-align: left;
   padding: 1rem;
   border-radius: 5px;
   backface-visibility: hidden;
-  box-shadow: 5px 10px;
+}
+button {
+  margin-top: 1rem;
+  width: 100%;
+  height: 3rem;
 }
 .back {
   position: relative;
-  background: white;
-  color: #03446a;
+  background: var(--background2);
+  color: var(--text);
   transform: rotateY(180deg);
 }
-.project button {
-  border: none;
-  color: none;
-  /* background-color: #270082; */
-  color: var(--text);
-  font-size: var(--medium-font-size);
-  overflow-wrap: break-word;
-  padding: 1vw;
-  text-align: left;
-}
 
-.project button:focus {
-  border: none;
-  outline: none;
-}
-
-.project button:focus {
-  outline: none !important;
-}
 .contact {
-  /* padding-top: 20vh; */
   height: var(--page-size);
-
   display: flex;
   flex-flow: row wrap;
-  /* font-size: var(--medium-font-size); */
   justify-content: center;
-
   align-content: center;
   align-items: center;
 }
 .contact .text-container {
   display: flex;
   flex-flow: column nowrap;
-
-  /* align-items: center; */
   padding: 0 2rem;
 }
 .contact .email {

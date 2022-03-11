@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-function TaskCard({ title, logo, mainText, buttonText, handleClick }) {
+function TaskCard({ title, logo, mainText, buttonText, url }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleFlip = (e) => {
     if (e.target.id != "taskcard-button") setIsFlipped(!isFlipped);
@@ -19,9 +19,9 @@ function TaskCard({ title, logo, mainText, buttonText, handleClick }) {
           <div>{mainText}</div>
           <button
             id="taskcard-button"
-            // onClick={() =>
-            //   window.open("https://github.com/Kaylinkk/task_page", "_blank")
-            // }
+            onClick={() => {
+              window.open(url, "_blank");
+            }}
           >
             {buttonText}
           </button>

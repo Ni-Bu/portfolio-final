@@ -63,6 +63,7 @@ function Project({ useAnimation, setInView }) {
             mainText="Helps organizing daily tasks one click at a time."
             buttonText="Open"
             logo={tasknet_logo}
+            url="https://github.com/Kaylinkk/task_page"
           />
         </animated.div>
         <animated.div style={rightTaskCardStyle}>

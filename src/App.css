@@ -143,9 +143,9 @@ a:active {
 }
 
 .intro-right-container .child-1 {
-  width: clamp(345px, 70%, 600px);
+  width: clamp(345px, 120%, 600px);
   position: relative;
-  top: 24%;
+  top: 28%;
   z-index: -10000;
 }
 
@@ -285,5 +285,8 @@ a:active {
 @media only screen and (max-width: 770px) {
   .home .intro-right-container {
     display: none;
+  }
+  .contact .text-container {
+    max-width: 90vw;
   }
 }

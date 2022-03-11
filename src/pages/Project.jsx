@@ -1,19 +1,18 @@
 import React, { useState, useRef } from "react";
-import foreground2 from "../img/foreground2.png";
-import water from "../img/water-cooler.png";
 import { useInViewEffect } from "react-hook-inview";
 import { animated, useChain } from "react-spring";
+
 import TaskCard from "./../components/taskCard";
+
+import foreground2 from "../img/foreground2.png";
+import tasknet_logo from "../img/Tasknet_logo.png";
+import water from "../img/water-cooler.png";
+import resume from "../img/icons8-resume-500.png";
 
 function Project({ useAnimation, setInView }) {
   const [isVisible, setIsVisible] = useState(false);
-  const [isFlipped, setIsFlipped] = useState(false);
 
   let animationChain;
-
-  const onFlip = () => {
-    setIsFlipped((isFlipped) => !isFlipped);
-  };
 
   const ref = useInViewEffect(
     ([entry], observer) => {
@@ -62,14 +61,16 @@ function Project({ useAnimation, setInView }) {
           <TaskCard
             title="Tasknet"
             mainText="Helps organizing daily tasks one click at a time."
-            buttonText="open"
+            buttonText="Open"
+            logo={tasknet_logo}
           />
         </animated.div>
         <animated.div style={rightTaskCardStyle}>
           <TaskCard
             title="Resume"
             mainText="A simple online resume website."
-            buttonText="open"
+            buttonText="Open"
+            logo={resume}
           />
         </animated.div>
       </div>

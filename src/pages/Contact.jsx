@@ -27,11 +27,9 @@ function Contact({ useAnimation, setInView }) {
   return (
     <div className="contact" id="contact" ref={ref}>
       <animated.div className="text-container" style={textStyle}>
-        <div>
-          Thanks for making it this far.
-          <br /> Feel free to contact me at :
-        </div>
-        <div className="email">muhammadahmad9497@hotmail.com</div>
+        <span>Thanks for making it this far.Feel free to contact me at :</span>
+
+        <span className="email">muhammadahmad9497@hotmail.com</span>
       </animated.div>
       <animated.img
         src={bye}

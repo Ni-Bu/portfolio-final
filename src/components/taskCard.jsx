@@ -1,20 +1,27 @@
 import { React, useState } from "react";
 
-function TaskCard({ title, logo, mainText, buttonText, onClicked }) {
+function TaskCard({ title, logo, mainText, buttonText, handleClick }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const onFlip = () => {
-    setIsFlipped((isFlipped) => !isFlipped);
+  const handleFlip = (e) => {
+    if (e.target.id != "taskcard-button") setIsFlipped(!isFlipped);
   };
   return (
-    <div className={`task-card ${isFlipped ? `flipped` : ``}`} onClick={onFlip}>
+    <div
+      className={`task-card ${isFlipped ? `flipped` : ``}`}
+      onClick={handleFlip}
+    >
       <div className="content">
-        <div className="front">{title}</div>
+        <div className="front">
+          <img src={logo} />
+          {title}
+        </div>
         <div className="back">
-          {mainText}
+          <div>{mainText}</div>
           <button
-          // onClick={() =>
-          //   window.open("https://github.com/Kaylinkk/task_page", "_blank")
-          // }
+            id="taskcard-button"
+            // onClick={() =>
+            //   window.open("https://github.com/Kaylinkk/task_page", "_blank")
+            // }
           >
             {buttonText}
           </button>

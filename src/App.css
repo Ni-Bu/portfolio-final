@@ -26,7 +26,7 @@ html {
   --foreground1: #700b97;
   --foreground2: #b900ff;
   --main-font: "Roboto Mono", sans-serif;
-  --large-font-size: clamp(50px, 4.18vw, 5rem);
+  --large-font-size: clamp(45px, 4.18vw, 5rem);
   --medium-font-size: clamp(25px, 2.8vw, 3rem);
   --page-size: 100vh;
 }
@@ -36,6 +36,12 @@ html {
     display: none;
   }
 }
+@media only screen and (max-width: 770px) {
+  .home .intro-right-container {
+    display: none;
+  }
+}
+
 .dummy-container {
   position: fixed;
   top: 0px;
@@ -61,14 +67,12 @@ body::-webkit-scrollbar {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .intro-left-container {
   display: flex;
   flex-flow: column nowrap;
-  flex-basis: 70%;
-
   gap: 3vw;
 }
 .intro-links {
@@ -79,10 +83,10 @@ body::-webkit-scrollbar {
   gap: 6vw;
 }
 .intro-left-container .inner1 {
-  width: clamp(96px, 8%, 150px);
+  width: clamp(76px, 8%, 150px);
 }
 .intro-left-container .inner2 {
-  width: clamp(96px, 8%, 150px);
+  width: clamp(76px, 8%, 150px);
 }
 .intro-text-container {
   width: 100%;
@@ -96,8 +100,6 @@ body::-webkit-scrollbar {
   padding: 1rem;
 }
 .intro-right-container {
-  flex-basis: 15%;
-  width: 100%;
   height: 100%;
   position: relative;
   display: flex;
@@ -126,8 +128,9 @@ body::-webkit-scrollbar {
   position: fixed;
 
   width: 100%;
-  padding-top: 1vw;
+
   z-index: 10000;
+  padding: 1rem;
 }
 
 .nav-bar {
@@ -155,6 +158,7 @@ a:active {
   opacity: 100%;
   border-bottom: 2px solid #fa58b6;
 }
+
 .project {
   height: var(--page-size);
   display: flex;
@@ -163,8 +167,10 @@ a:active {
 .project .image-container {
   position: relative;
   top: 10vh;
-  flex-basis: 30%;
-  width: 100%;
+  /* flex-basis: 30%; */
+  /* width: 100%; */
+  top: 0;
+  left: 0;
 }
 .project .inner1 {
   position: absolute;
@@ -178,17 +184,20 @@ a:active {
 }
 .project .content-container {
   padding: 2rem;
-  flex-basis: 70%;
+  width: 100%;
+  /* flex-basis: %; */
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   gap: 10vw;
+  padding-left: 20vw;
 }
 
 .content {
   transition: transform 1s;
   transform-style: preserve-3d;
+  cursor: pointer;
 }
 .task-card.flipped > .content {
   transform: rotateY(180deg);
@@ -199,8 +208,8 @@ a:active {
   position: absolute;
   background-position: center;
   background-size: cover;
-  width: clamp(175px, 20.85vw, 400px);
-  height: clamp(350px, 27.8vw, 600px);
+  width: clamp(250px, 20.85vw, 400px);
+  height: clamp(300px, 27.8vw, 600px);
   background: var(--foreground1);
   color: var(--highlighted-text);
   vertical-align: middle;
@@ -208,19 +217,45 @@ a:active {
   padding: 1rem;
   border-radius: 5px;
   backface-visibility: hidden;
+  display: flex;
+  flex-flow: column nowrap;
 }
-button {
-  margin-top: 1rem;
+#taskcard-button {
+  padding: 0.5rem;
   width: 100%;
-  height: 3rem;
+  cursor: pointer;
+  font-size: var(--medium-font-size)-1vw;
+  color: var(--highlighted-text);
+  background: var(--foreground1);
+  border-radius: 16px;
+  border: none;
+  text-decoration: none;
+  font-family: var(--main-font);
+}
+#taskcard-button:hover,
+#taskcard-button:focus {
+  background: var(--foreground2);
+  outline: 1px solid var(--highlighted-text);
 }
 .back {
   position: relative;
   background: var(--background2);
   color: var(--text);
   transform: rotateY(180deg);
-}
 
+  justify-content: space-between;
+}
+.front {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.front img {
+  width: 50%;
+}
+.front:hover {
+  font-size: var(--large-font-size);
+}
 .contact {
   height: var(--page-size);
   display: flex;
@@ -233,11 +268,13 @@ button {
   display: flex;
   flex-flow: column nowrap;
   padding: 0 2rem;
+  max-width: 60vw;
 }
 .contact .email {
   font-weight: bold;
   color: var(--highlighted-text);
+  overflow-wrap: break-word;
 }
 .contact .image {
-  width: clamp(398px, 25vw, 700px);
+  width: clamp(250px, 25vw, 700px);
 }

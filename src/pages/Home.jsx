@@ -21,7 +21,7 @@ function Home({ setAnimationChain, useAnimation, setInView }) {
   );
 
   const introTextRef = useRef();
-  const introTextStyle = useAnimation(introTextRef, 0, 0, 0, -500);
+  const introTextStyle = useAnimation(introTextRef, 0, 0, 0, -100);
   const introLinkRef = useRef();
   const introLinkStyle = useAnimation(introLinkRef, 0, 0, -100, 0);
   const foreground1Ref = useRef();

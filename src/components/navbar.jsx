@@ -10,7 +10,7 @@ function NavBar({ setAnimationChain, useAnimation, inView }) {
     setAnimationChain((old) => [...old, navRef]);
   }, []);
 
-  const isMobile = useMediaQuery({ maxWidth: "600px" });
+  const isMobile = useMediaQuery({ maxWidth: "576px" });
   return (
     <div className="nav-container">
       {!isMobile && (

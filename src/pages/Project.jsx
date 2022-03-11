@@ -26,7 +26,7 @@ function Project({ useAnimation, setInView }) {
   );
 
   const foregroundRef = useRef();
-  const foregroundStyle = useAnimation(foregroundRef, 0, 0, 0, -500);
+  const foregroundStyle = useAnimation(foregroundRef, 0, 0, 0, -100);
   const waterRef = useRef();
   const waterStyle = useAnimation(waterRef, -200, 0, 0, 0);
   const leftTaskCardRef = useRef();

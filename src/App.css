@@ -269,6 +269,10 @@ a:active {
   .project .inner1 {
     display: none;
   }
+  .project .inner2 {
+    width: 350px;
+  }
+
   .project .content-container {
     padding-left: 0;
   }

@@ -95,14 +95,13 @@ a:active {
 .intro-left-container {
   display: flex;
   flex-flow: column nowrap;
-  gap: 3vw;
+  gap: 1rem;
 }
 .intro-links {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-
-  gap: 6vw;
+  gap: 2rem;
 }
 .links {
   width: clamp(66px, 8%, 150px);
@@ -175,7 +174,7 @@ a:active {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  gap: 10vw;
+  gap: 4rem;
   padding-left: 30vw;
 }
 
@@ -293,3 +292,32 @@ a:active {
     width: 66px;
   }
 } */
+@supports (gap: 1vw) {
+  .intro-left-container {
+    gap: 3vw;
+  }
+  .intro-links {
+    gap: 6vw;
+  }
+  .project .content-container {
+    gap: 10vw;
+  }
+}
+
+@supports (width: clamp(1px, 2vw, 3px)) {
+  html {
+    --large-font-size: 45px;
+    --medium-font-size: 25px;
+  }
+  .links {
+    width: 66px;
+  }
+  .front,
+  .back {
+    width: 250px;
+    height: 300px;
+  }
+  .contact .image {
+    width: 250px;
+  }
+}

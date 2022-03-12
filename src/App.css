@@ -23,8 +23,8 @@ html {
   --foreground1: #700b97;
   --foreground2: #b900ff;
   --main-font: "Roboto Mono", sans-serif;
-  --large-font-size: clamp(45px, 4.18vw, 5rem);
-  --medium-font-size: clamp(25px, 2.8vw, 3rem);
+  --large-font-size: 45px;
+  --medium-font-size: 25px;
   --page-size: 100vh;
 }
 
@@ -95,16 +95,15 @@ a:active {
 .intro-left-container {
   display: flex;
   flex-flow: column nowrap;
-  gap: 1rem;
+  margin-right: 2rem;
 }
 .intro-links {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  gap: 2rem;
 }
 .links {
-  width: clamp(66px, 8%, 150px);
+  width: 66px;
 }
 .links:hover {
   transform: scale(1.2);
@@ -174,7 +173,7 @@ a:active {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+
   padding-left: 30vw;
 }
 
@@ -183,7 +182,7 @@ a:active {
   transform-style: preserve-3d;
   cursor: pointer;
 }
-.task-card.flipped > .content {
+.task-cardflipped > .content {
   transform: rotateY(180deg);
   transition: transform 0.5s;
 }
@@ -192,8 +191,8 @@ a:active {
   position: absolute;
   background-position: center;
   background-size: cover;
-  width: clamp(250px, 20.85vw, 400px);
-  height: clamp(300px, 27.8vw, 600px);
+  width: 250px;
+  height: 300px;
   background: var(--foreground1);
   color: var(--highlighted-text);
   vertical-align: middle;
@@ -232,9 +231,9 @@ a:active {
 .front {
   justify-content: center;
   align-items: center;
-  gap: 2rem;
 }
 .front img {
+  margin: 1.5rem;
   width: 50%;
 }
 .front:hover {
@@ -260,7 +259,7 @@ a:active {
   overflow-wrap: break-word;
 }
 .contact .image {
-  width: clamp(250px, 25vw, 700px);
+  width: 250px;
 }
 @media only screen and (max-width: 1000px) {
   .project .inner1 {
@@ -303,21 +302,30 @@ a:active {
     gap: 10vw;
   }
 }
+@supports not (gap: 1vw) {
+  .links {
+    box-sizing: content-box;
+    padding: 0 3rem;
+  }
+  .task-card {
+    padding: 0 3rem;
+  }
+}
 
 @supports (width: clamp(1px, 2vw, 3px)) {
   html {
-    --large-font-size: 45px;
-    --medium-font-size: 25px;
+    --large-font-size: clamp(45px, 4.18vw, 5rem);
+    --medium-font-size: clamp(25px, 2.8vw, 3rem);
   }
   .links {
-    width: 66px;
+    width: clamp(66px, 8%, 150px);
   }
   .front,
   .back {
-    width: 250px;
-    height: 300px;
+    width: clamp(250px, 20.85vw, 400px);
+    height: clamp(300px, 27.8vw, 600px);
   }
   .contact .image {
-    width: 250px;
+    width: clamp(250px, 25vw, 700px);
   }
 }

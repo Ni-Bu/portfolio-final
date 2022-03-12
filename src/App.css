@@ -16,9 +16,6 @@
 }
 html {
   scroll-behavior: auto;
-}
-
-:root {
   --text: #fa58b6;
   --highlighted-text: #f800b6;
   --main-background: #1a1a40;
@@ -65,9 +62,6 @@ body::-webkit-scrollbar {
   justify-content: flex-end;
   color: var(--text);
 }
-.nav-bar .logo {
-  flex-basis: 60%;
-}
 
 a,
 a:hover,
@@ -110,9 +104,8 @@ a:active {
 
   gap: 6vw;
 }
-.intro-left-container .links {
+.links {
   width: clamp(66px, 8%, 150px);
-  opacity: 70%;
 }
 .links:hover {
   transform: scale(1.2);
@@ -290,3 +283,13 @@ a:active {
     max-width: 90vw;
   }
 }
+
+/* @media only screen and (max-width: 576px) {
+  :root {
+    --large-font-size: 45px;
+    --medium-font-size: 25px;
+  }
+  .links {
+    width: 66px;
+  }
+} */

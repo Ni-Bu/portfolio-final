@@ -305,10 +305,10 @@ a:active {
 @supports not (gap: 1vw) {
   .links {
     box-sizing: content-box;
-    padding: 0 3rem;
+    padding-right: 0 48px;
   }
   .task-card {
-    padding: 0 3rem;
+    padding: 0 48px;
   }
 }
 

@@ -7,7 +7,7 @@ import TaskCard from "./../components/taskCard";
 import foreground2 from "../img/foreground2.png";
 import tasknet_logo from "../img/Tasknet_logo.png";
 import water from "../img/water-cooler.png";
-import resume from "../img/icons8-resume-500.png";
+import logo from "../img/logo.png";
 
 function Project({ useAnimation, setInView }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,17 +61,22 @@ function Project({ useAnimation, setInView }) {
           <TaskCard
             title="Tasknet"
             mainText="Helps organizing daily tasks one click at a time."
-            buttonText="Open"
             logo={tasknet_logo}
-            url="https://github.com/Kaylinkk/task_page"
+            buttonSiteText="Visit"
+            buttonGithubText="Open"
+            urlSite="https://tasknet.vercel.app/"
+            urlGithub="https://github.com/Ni-Bu/tasknet"
           />
         </animated.div>
         <animated.div style={rightTaskCardStyle}>
           <TaskCard
-            title="Resume"
-            mainText="A simple online resume website."
-            buttonText="Open"
-            logo={resume}
+            title="Portfolio"
+            mainText="A portfolio to showcase my projects and skills."
+            logo={logo}
+            buttonSiteText="Visit"
+            buttonGithubText="Open"
+            urlSite="https://muneeb.vercel.app/"
+            urlGithub="https://github.com/Ni-Bu/portfolio-final"
           />
         </animated.div>
       </div>

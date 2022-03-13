@@ -4,6 +4,7 @@ import foreground1 from "../img/foreground1.png";
 import hello from "../img/Hello.png";
 import resume from "../img/icons8-resume-500.svg";
 import github from "../img/icons8-github.svg";
+import pdf from "../assets/resume.pdf";
 import { animated } from "react-spring";
 import { useInViewEffect } from "react-hook-inview";
 
@@ -37,7 +38,7 @@ function Home({ setAnimationChain, useAnimation, setInView }) {
       foreground1Ref,
       helloImageRef,
     ]);
-  }, []);
+  });
 
   return (
     <div className="home" id="home" ref={ref}>
@@ -48,19 +49,23 @@ function Home({ setAnimationChain, useAnimation, setInView }) {
           </animated.div>
         </div>
         <div className="intro-links">
-          <animated.img
-            src={resume}
-            className="links "
-            style={introLinkStyle}
-            alt="resume icon"
-          />
-          <animated.img
-            src={github}
-            className="links "
-            style={introLinkStyle}
-            alt="github icon"
-            onClick={() => window.open("https://github.com/Ni-Bu", "_blank")}
-          />
+          <a href={pdf} target="_blank" rel="noreferrer">
+            <animated.img
+              src={resume}
+              className="links"
+              style={introLinkStyle}
+              alt="resume icon"
+            />
+          </a>
+          <a>
+            <animated.img
+              src={github}
+              className="links"
+              style={introLinkStyle}
+              alt="github icon"
+              onClick={() => window.open("https://github.com/Ni-Bu", "_blank")}
+            />
+          </a>
         </div>
       </div>
       <div className="intro-right-container">

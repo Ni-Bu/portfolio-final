@@ -15,7 +15,7 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
   --text: #fa58b6;
   --highlighted-text: #f800b6;
   --main-background: #1a1a40;
@@ -103,7 +103,7 @@ a:active {
   justify-content: center;
 }
 .links {
-  width: 66px;
+  width: 70px;
 }
 .links:hover {
   transform: scale(1.2);
@@ -182,7 +182,7 @@ a:active {
   transform-style: preserve-3d;
   cursor: pointer;
 }
-.task-cardflipped > .content {
+.task-card.flipped > .content {
   transform: rotateY(180deg);
   transition: transform 0.5s;
 }
@@ -192,7 +192,7 @@ a:active {
   background-position: center;
   background-size: cover;
   width: 250px;
-  height: 300px;
+  height: 320px;
   background: var(--foreground1);
   color: var(--highlighted-text);
   vertical-align: middle;
@@ -203,9 +203,24 @@ a:active {
   display: flex;
   flex-flow: column nowrap;
 }
+.button-container {
+  display: flex;
+  gap: 1vw;
+}
+a {
+  color: none;
+  text-decoration: none;
+}
+
+a:hover {
+  color: none;
+  text-decoration: none;
+  cursor: pointer;
+}
 #taskcard-button {
-  padding: 0.5rem;
-  width: 100%;
+  /* padding: 0.5rem; */
+  /* width: 0%; */
+  width: 50%;
   cursor: pointer;
   font-size: var(--medium-font-size)-1vw;
   color: var(--highlighted-text);
@@ -317,10 +332,10 @@ a:active {
 @supports (width: clamp(1px, 2vw, 3px)) {
   html {
     --large-font-size: clamp(45px, 4.18vw, 5rem);
-    --medium-font-size: clamp(25px, 2.8vw, 3rem);
+    --medium-font-size: clamp(25px, 2.5vw, 3rem);
   }
   .links {
-    width: clamp(66px, 8%, 150px);
+    width: clamp(75px, 8%, 150px);
   }
   .front,
   .back {

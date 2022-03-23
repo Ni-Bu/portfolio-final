@@ -26,6 +26,7 @@ html {
   --large-font-size: 45px;
   --medium-font-size: 25px;
   --page-size: 100vh;
+  background-color: #1a1a40;
 }
 
 .dummy-container {
@@ -33,17 +34,18 @@ html {
   top: 0px;
   left: 0px;
   z-index: 1299;
-  width: 100vw;
+  width: 150vw;
   height: calc(71px + 1rem + 56px + 1rem + 0px);
   background: linear-gradient(var(--main-background) 0%, rgba(0, 0, 0, 0) 100%);
 }
-body {
+#root {
   background-color: #1a1a40;
   color: var(--text);
   font-family: var(--main-font);
   font-size: var(--medium-font-size);
   overflow-x: hidden;
 }
+
 body::-webkit-scrollbar {
   width: 0 !important;
 }
@@ -63,13 +65,13 @@ body::-webkit-scrollbar {
   color: var(--text);
 }
 
-a,
+/* a,
 a:hover,
 a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
-}
+} */
 .nav-bar a {
   opacity: 40%;
   text-decoration: none;
@@ -127,20 +129,19 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 10vw;
 }
-.intro-right-container .child {
+.child {
   position: absolute;
 }
 
-.intro-right-container .child-1 {
+.child-1 {
   width: clamp(345px, 120%, 600px);
   position: relative;
-  top: 28%;
-  z-index: -10000;
+  top: 70%;
+  /* z-index: -10000; */
 }
 
-.intro-right-container .child-2 {
+.child-2 {
   width: clamp(453px, 30vw, 700px);
 }
 
@@ -158,12 +159,12 @@ a:active {
 .project .inner1 {
   position: absolute;
   width: clamp(398px, 25vw, 700px);
-  z-index: -90;
+  /* z-index: -90; */
 }
 .project .inner2 {
   position: absolute;
   width: clamp(481px, 25vw, 700px);
-  z-index: -100;
+  /* z-index: -100; */
 }
 .project .content-container {
   padding: 2rem;
@@ -207,7 +208,7 @@ a:active {
   display: flex;
   gap: 1vw;
 }
-a {
+/* a {
   color: none;
   text-decoration: none;
 }
@@ -216,7 +217,7 @@ a:hover {
   color: none;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 #taskcard-button {
   /* padding: 0.5rem; */
   /* width: 0%; */

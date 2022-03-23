@@ -5,7 +5,12 @@ import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 import React, { useState } from "react";
 import { useSpring, useChain } from "react-spring";
-
+import { CssBaseline, Container } from "@mui/material";
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 function App() {
   const [introAnimationChain, setIntroAnimationChain] = useState([]);
   useChain(introAnimationChain, [0, 0.4, 0.6, 0.8, 1]);
@@ -14,26 +19,48 @@ function App() {
     project: false,
     contact: false,
   });
+  let theme = createTheme({
+    palette: {
+      text: {
+        mainColor: "#fa58b6",
+        highlightColor: "#f800b6",
+        mainFont: "'Roboto Mono', sans-serif",
+        largeFontSize: "clamp(45px, 4.18vw, 5rem)",
+        mediumFontSize: "clamp(25px, 2.5vw, 3rem)",
+      },
+      bg: {
+        main: "#1a1a40",
+        secondary: "#270082",
+        fg1: "#700b97",
+        fg2: "#b900ff",
+      },
+    },
+  });
+  theme = responsiveFontSizes(theme);
 
   return (
-    <div className="App">
-      <div className="dummy-container"></div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+
       <NavBar
         setAnimationChain={setIntroAnimationChain}
         useAnimation={useAnimation}
         inView={inView}
       />
+      {/* <Container className="dummy-container"></Container> */}
+      <main>
+        <Home
+          setAnimationChain={setIntroAnimationChain}
+          useAnimation={useAnimation}
+          inView={inView}
+          setInView={setInView}
+        />
 
-      <Home
-        setAnimationChain={setIntroAnimationChain}
-        useAnimation={useAnimation}
-        setInView={setInView}
-      />
+        <Project useAnimation={useAnimation} setInView={setInView} />
 
-      <Project useAnimation={useAnimation} setInView={setInView} />
-
-      <Contact useAnimation={useAnimation} setInView={setInView} />
-    </div>
+        <Contact useAnimation={useAnimation} setInView={setInView} />
+      </main>
+    </ThemeProvider>
   );
 }
 

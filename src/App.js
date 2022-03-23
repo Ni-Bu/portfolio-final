@@ -27,6 +27,7 @@ function App() {
         mainFont: "'Roboto Mono', sans-serif",
         largeFontSize: "clamp(45px, 4.18vw, 5rem)",
         mediumFontSize: "clamp(25px, 2.5vw, 3rem)",
+        emailFontSize: "clamp(10px, 2.5vw, 3rem)",
       },
       bg: {
         main: "#1a1a40",

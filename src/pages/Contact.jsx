@@ -4,6 +4,7 @@ import { useInViewEffect } from "react-hook-inview";
 import { animated, useChain } from "react-spring";
 import { Box, Typography, Grid, Slide } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { ThemeConsumer } from "styled-components";
 function Contact({ useAnimation, setInView }) {
   const [isVisible, setIsVisible] = useState(false);
   const [triggerAnim, setTriggerAnim] = useState(false);
@@ -62,14 +63,15 @@ function Contact({ useAnimation, setInView }) {
               flexFlow: "column nowrap",
               justifyContent: "center",
             }}
+            maxWidth={"70vw"}
           >
             <Typography variant="h4" textAlign={"center"}>
               Thanks for making it this far.Feel free to contact me at :
             </Typography>
             <Typography
-              variant="h4"
               color={theme.palette.text.highlightColor}
               textAlign={"center"}
+              sx={{ fontSize: theme.palette.text.emailFontSize }}
             >
               muhammadahmad9497@hotmail.com
             </Typography>

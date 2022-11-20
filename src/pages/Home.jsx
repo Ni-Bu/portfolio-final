@@ -4,7 +4,7 @@ import foreground1 from "../img/foreground1.png";
 import hello from "../img/Hello.png";
 import { ReactComponent as Resume } from "../img/icons8-resume-500.svg";
 import { ReactComponent as Github } from "../img/icons8-github.svg";
-import pdf from "../assets/resume.pdf";
+import pdf from "../assets/Resume.pdf";
 import { animated } from "react-spring";
 import { useInViewEffect } from "react-hook-inview";
 import { Typography, Grid, Slide, IconButton, Box, Fade } from "@mui/material";
